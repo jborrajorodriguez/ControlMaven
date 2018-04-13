@@ -24,7 +24,7 @@ public class Funciones {
 
     public static void visualizacion() {
         try {
-            JOptionPane.showMessageDialog(null, Funciones.tiempo()+" "+Funciones.capturar());
+            JOptionPane.showMessageDialog(null, Funciones.tiempo2()+"  "+Funciones.tiempo()+" "+Funciones.capturar());
         } catch (IOException ex) {
             System.out.println("Error al mostrar titulo");
         }
@@ -53,6 +53,17 @@ public class Funciones {
         String url = "https://weather.com/es-ES/tiempo/hoy/l/SPXX0084:1:SP";
         Document document = Jsoup.connect(url).get();
         String tiempo=document.select("div.today_nowcard-temp").text();
+        return tiempo;
+    }
+    /**
+     * Metodo estatico que devuelve un String con el tipo de tiempo que hace.
+     * @return devuelve el estado del tiempo.
+     * @throws IOException 
+     */
+    public static String tiempo2() throws IOException{
+        String url = "https://weather.com/es-ES/tiempo/hoy/l/SPXX0084:1:SP";
+        Document document = Jsoup.connect(url).get();
+        String tiempo=document.select("div.today_nowcard-phrase").text();
         return tiempo;
     }
 
