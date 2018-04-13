@@ -1,6 +1,8 @@
 
 package com.juan.controlmaven;
 
+import java.io.IOException;
+
 
 
 /**
@@ -10,8 +12,11 @@ package com.juan.controlmaven;
 public class ClasePrincipal {
 
     
-    public static void main(String[] args) {
+    public static void main(String[] args){
+        
         Funciones.visualizacion();
+        
+        
     }
 
 }
